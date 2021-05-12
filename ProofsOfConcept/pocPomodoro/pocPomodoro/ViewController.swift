@@ -7,18 +7,45 @@
 
 import UIKit
 
+public enum TimerType: String {
+    case pomodoro = "pomodoro"
+    case shortBreak = "shortBreak"
+    case longBreak = "longBreak"
+}
+
 class ViewController: UIViewController {
+    private let defaults = UserDefaults.standard
+    
     var timer = Timer()
     var isTimerStarted = false
-    var time = 1500 // seconds
+    var time = getPomodoTimer() // seconds
     
     let contentView: PomodoroView = {
         let view = PomodoroView(frame: UIScreen.main.bounds)
         view.buttonCancel.addTarget(self, action: #selector(clickButtonCancel), for: .touchUpInside)
         view.buttonStartAndPause.addTarget(self, action: #selector(clickButtonStartAndPause), for: .touchUpInside)
-
+        
         return view
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupDefaults(with: defaults)
+    }
+    
+    override func loadView() {
+        super.loadView()
+        self.view = contentView
+    }
+    
+    func setupDefaults(with defaults: UserDefaults) {
+        defaults.set(1500, forKey: TimerType.pomodoro.rawValue)
+    }
+    
+    static func getPomodoTimer() -> Int {
+        return UserDefaults.standard.integer(forKey: TimerType.pomodoro.rawValue)
+    }
+    
     
     // Action button cancel
     @objc func clickButtonCancel(sender: UIButton) {
@@ -26,16 +53,15 @@ class ViewController: UIViewController {
         sender.alpha = 0.5
         
         self.timer.invalidate()
-        self.time = 1500
+        self.time = ViewController.getPomodoTimer()
         self.isTimerStarted = false
         
         self.contentView.labelTime.text = "25:00"
         self.contentView.buttonStartAndPause.setTitle("Iniciar", for: .normal)
         self.contentView.buttonStartAndPause.setTitleColor(.systemBlue, for: .normal)
-        
-        print("clicou button cancel")
     }
     
+    // Action button play and pause
     @objc func clickButtonStartAndPause(sender: UIButton) {
         self.contentView.buttonCancel.isEnabled = true
         self.contentView.buttonCancel.alpha = 1
@@ -69,14 +95,5 @@ class ViewController: UIViewController {
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
         return String(format:"%02i:%02i", minutes, seconds)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func loadView() {
-        super.loadView()
-        self.view = contentView
     }
 }
