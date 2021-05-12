@@ -75,6 +75,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7797E49A264AABF500B1FEBD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7797E49B264AABFC00B1FEBD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		77AFFAFB2649705000DB29EE = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +113,8 @@
 		77AFFB062649705000DB29EE /* Moment */ = {
 			isa = PBXGroup;
 			children = (
+				7797E49B264AABFC00B1FEBD /* Models */,
+				7797E49A264AABF500B1FEBD /* Extensions */,
 				77AFFB322649709500DB29EE /* Moment.entitlements */,
 				77AFFB072649705000DB29EE /* MomentApp.swift */,
 				77AFFB092649705000DB29EE /* ContentView.swift */,
