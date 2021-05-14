@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56F54B04264EADA800BEEAD0 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56F54B03264EADA200BEEAD0 /* Montserrat-Regular.ttf */; };
+		56F54B09264EADAA00BEEAD0 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56F54B03264EADA200BEEAD0 /* Montserrat-Regular.ttf */; };
 		7736EC00264EA81100B11302 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBFF264EA81100B11302 /* Tests_iOS.swift */; };
 		7736EC0B264EA81100B11302 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EC0A264EA81100B11302 /* Tests_macOS.swift */; };
 		7736EC0D264EA81100B11302 /* MomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBE4264EA81000B11302 /* MomentApp.swift */; };
@@ -35,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56F54B03264EADA200BEEAD0 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		7736EBE4264EA81000B11302 /* MomentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentApp.swift; sourceTree = "<group>"; };
 		7736EBE5264EA81000B11302 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7736EBE6264EA81100B11302 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,11 +88,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56F54B02264EAD4900BEEAD0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				56F54B03264EADA200BEEAD0 /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		7736EBDE264EA81000B11302 = {
 			isa = PBXGroup;
 			children = (
 				7736EC22264EA87400B11302 /* .swiftlint.yml */,
 				7736EC21264EA81E00B11302 /* Moment.entitlements */,
+				56F54B02264EAD4900BEEAD0 /* Fonts */,
 				7736EBE3264EA81000B11302 /* Shared */,
 				7736EBED264EA81100B11302 /* iOS */,
 				7736EBF4264EA81100B11302 /* macOS */,
@@ -281,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F54B04264EADA800BEEAD0 /* Montserrat-Regular.ttf in Resources */,
 				7736EC11264EA81100B11302 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F54B09264EADAA00BEEAD0 /* Montserrat-Regular.ttf in Resources */,
 				7736EC12264EA81100B11302 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
