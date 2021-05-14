@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     var timer = Timer()
     var isTimerStarted = false
-    var time = getPomodoTimer() // seconds
+    var time = getPomodoroTimer() // seconds
     
     let contentView: PomodoroView = {
         let view = PomodoroView(frame: UIScreen.main.bounds)
@@ -40,12 +40,16 @@ class ViewController: UIViewController {
     
     func setupDefaults(with defaults: UserDefaults) {
         defaults.set(1500, forKey: TimerType.pomodoro.rawValue)
+        // pause break
+        // long break
     }
     
-    static func getPomodoTimer() -> Int {
+    public static func getPomodoroTimer() -> Int {
         return UserDefaults.standard.integer(forKey: TimerType.pomodoro.rawValue)
     }
     
+    // get pause break
+    // get long break
     
     // Action button cancel
     @objc func clickButtonCancel(sender: UIButton) {
@@ -53,7 +57,7 @@ class ViewController: UIViewController {
         sender.alpha = 0.5
         
         self.timer.invalidate()
-        self.time = ViewController.getPomodoTimer()
+        self.time = ViewController.getPomodoroTimer()
         self.isTimerStarted = false
         
         self.contentView.labelTime.text = "25:00"
