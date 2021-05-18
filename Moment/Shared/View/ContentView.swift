@@ -6,24 +6,27 @@
 //
 
 import SwiftUI
-//swiftlint:disable identifier_name
+
 struct ContentView: View {
     @State var progress: CGFloat = 0.6
     @State var phase: CGFloat = 0.0
     var body: some View {
         GeometryReader { geometry in
-            WaterWave(progress: self.progress, phase: self.phase)
-                .fill(Color.init("FillWaterWave"))
-                .clipShape(Capsule())
-                .frame(width: 228, height: 228)
-                .gesture(DragGesture(minimumDistance: 0)
-                .onChanged({ (value) in
-                    self.progress = 1-(value.location.y/geometry.size.height)
-                }))
-        }.onAppear {
-            withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
-                self.phase = .pi * 2
-            }
+            ZStack {
+                WaterWave(progress: self.progress, phase: self.phase)
+                    .fill(Color.init("FillWaterWave"))
+                    .clipShape(Capsule())
+                    .frame(width: 228, height: 228)
+                    .gesture(DragGesture(minimumDistance: 0)
+                        .onChanged({ (value) in
+                            self.progress = 1-(value.location.y/geometry.size.height)
+                                }))
+                    }.onAppear {
+                        withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
+                    self.phase = .pi * 2
+                }
+            }.frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+            
         }
         
     }
@@ -52,13 +55,13 @@ struct WaterWave: Shape {
         
         path.move(to: CGPoint(x: 0, y: progressHeight))
         
-        for x in stride(from: 0, to: width + 5, by: 5) {
+        for xPoint in stride(from: 0, to: width + 5, by: 5) {
             
-            let relativeX = x/waveLength
-            let normalizedLength = (x-minWidth)/minWidth
-            let y = progressHeight + sin(phase + relativeX)*applitude*normalizedLength
+            let relativeX = xPoint/waveLength
+            let normalizedLength = (xPoint-minWidth)/minWidth
+            let yPoint = progressHeight + sin(phase + relativeX)*applitude*normalizedLength
             
-            path.addLine(to: CGPoint(x: x, y: y))
+            path.addLine(to: CGPoint(x: xPoint, y: yPoint))
         }
         
         path.addLine(to: CGPoint(x: width, y: progressHeight))
