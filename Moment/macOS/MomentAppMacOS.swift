@@ -11,7 +11,7 @@ import SwiftUI
 struct MomentApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().frame(width: 440, height: 600, alignment: .center)
         }
     }
 }

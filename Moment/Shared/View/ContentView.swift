@@ -8,19 +8,19 @@
 import SwiftUI
 //swiftlint:disable identifier_name
 struct ContentView: View {
-    @State var progress: CGFloat = 0.4
+    @State var progress: CGFloat = 0.6
     @State var phase: CGFloat = 0.0
     var body: some View {
         GeometryReader { geometry in
             WaterWave(progress: self.progress, phase: self.phase)
-                .fill(Color.blue)
+                .fill(Color.init("FillWaterWave"))
                 .clipShape(Capsule())
-                .frame(width: 200)
+                .frame(width: 228, height: 228)
                 .gesture(DragGesture(minimumDistance: 0)
                 .onChanged({ (value) in
                     self.progress = 1-(value.location.y/geometry.size.height)
                 }))
-        }.onAppear() {
+        }.onAppear {
             withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
                 self.phase = .pi * 2
             }
