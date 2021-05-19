@@ -7,7 +7,7 @@
 
 import XCTest
 
-//swiftlint:disable type_name
+// swiftlint:disable type_name
 class Tests_macOS: XCTestCase {
 
     override func setUpWithError() throws {
