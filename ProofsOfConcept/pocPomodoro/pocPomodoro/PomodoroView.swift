@@ -23,7 +23,7 @@ class PomodoroView: UIView {
     lazy var labelTime: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "25:00"
+        label.text = ""
         label.textColor = .white
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 34)

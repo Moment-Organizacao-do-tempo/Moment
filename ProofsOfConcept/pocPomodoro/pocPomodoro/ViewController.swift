@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     var timer = Timer()
     var isTimerStarted = false
-    var time = getPomodoroTimer() // seconds
+    lazy var time = self.getPomodoroTimer() // seconds
     
     let contentView: PomodoroView = {
         let view = PomodoroView(frame: UIScreen.main.bounds)
@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDefaults(with: defaults)
+        self.contentView.labelTime.text = formatTime()
     }
     
     override func loadView() {
@@ -39,17 +40,30 @@ class ViewController: UIViewController {
     }
     
     func setupDefaults(with defaults: UserDefaults) {
-        defaults.set(1500, forKey: TimerType.pomodoro.rawValue)
-        // pause break
-        // long break
+        // pomodoro - 15 minutes
+        defaults.set(900, forKey: TimerType.pomodoro.rawValue)
+        
+        // pause break - 5 minutes
+        defaults.set(300, forKey: TimerType.shortBreak.rawValue)
+
+        // long break - 10 minutes
+        defaults.set(600, forKey: TimerType.longBreak.rawValue)
     }
     
-    public static func getPomodoroTimer() -> Int {
+    // get pomodoro timer
+    public func getPomodoroTimer() -> Int {
         return UserDefaults.standard.integer(forKey: TimerType.pomodoro.rawValue)
     }
     
     // get pause break
+    public func getShortBreakTimer() -> Int {
+        return UserDefaults.standard.integer(forKey: TimerType.shortBreak.rawValue)
+    }
+    
     // get long break
+    public func getLongBreakTimer() -> Int {
+        return UserDefaults.standard.integer(forKey: TimerType.longBreak.rawValue)
+    }
     
     // Action button cancel
     @objc func clickButtonCancel(sender: UIButton) {
@@ -57,10 +71,10 @@ class ViewController: UIViewController {
         sender.alpha = 0.5
         
         self.timer.invalidate()
-        self.time = ViewController.getPomodoroTimer()
+        self.time = self.getPomodoroTimer()
         self.isTimerStarted = false
         
-        self.contentView.labelTime.text = "25:00"
+        self.contentView.labelTime.text = formatTime()
         self.contentView.buttonStartAndPause.setTitle("Iniciar", for: .normal)
         self.contentView.buttonStartAndPause.setTitleColor(.systemBlue, for: .normal)
     }
@@ -90,8 +104,13 @@ class ViewController: UIViewController {
     }
     
     @objc func updateTimer() {
-        time -= 1
-        self.contentView.labelTime.text = formatTime()
+        if time != 0 {
+            time -= 1
+            self.contentView.labelTime.text = formatTime()
+        } else {
+            // trocar botão para iniciar
+            self.timer.invalidate()
+        }
     }
     
     // method formats time to string.
