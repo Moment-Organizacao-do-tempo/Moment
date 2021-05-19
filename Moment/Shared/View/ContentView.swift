@@ -11,7 +11,6 @@ struct ContentView: View {
     @State var progress: CGFloat = 0.5
     @State var phase: CGFloat = 0.0
     var body: some View {
-
         GeometryReader { geometry in
             ZStack {
                 Color.init("BackgroundColor").ignoresSafeArea()
@@ -71,7 +70,7 @@ struct WaterWave: Shape {
             
             let relativeX = xPoint/waveLength
             let normalizedLength = (xPoint-minWidth)/minWidth
-            let yPoint = progressHeight + sin(phase + relativeX)*applitude*normalizedLength
+            let yPoint = progressHeight + sin(phase + relativeX) * applitude * normalizedLength
             
             path.addLine(to: CGPoint(x: xPoint, y: yPoint))
         }
