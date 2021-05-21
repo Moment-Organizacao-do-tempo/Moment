@@ -67,7 +67,9 @@ struct WaterWave: Shape {
         
         path.move(to: CGPoint(x: 0, y: progressHeight))
         
-        for xPoint in stride(from: 0, to: width + 5, by: 5) {
+        
+        
+        for xPoint in stride(from: CGFloat(0), to: (CGFloat(width) + CGFloat(5)), by: CGFloat(5)) {
             
             let relativeX = xPoint/waveLength
             let normalizedLength = (xPoint-minWidth)/minWidth
