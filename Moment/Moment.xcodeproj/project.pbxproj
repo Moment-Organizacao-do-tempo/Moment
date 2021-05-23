@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56F54B04264EADA800BEEAD0 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56F54B03264EADA200BEEAD0 /* Montserrat-Regular.ttf */; };
+		56F54B09264EADAA00BEEAD0 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56F54B03264EADA200BEEAD0 /* Montserrat-Regular.ttf */; };
 		7736EC00264EA81100B11302 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBFF264EA81100B11302 /* Tests_iOS.swift */; };
 		7736EC0B264EA81100B11302 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EC0A264EA81100B11302 /* Tests_macOS.swift */; };
-		7736EC0D264EA81100B11302 /* MomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBE4264EA81000B11302 /* MomentApp.swift */; };
-		7736EC0E264EA81100B11302 /* MomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBE4264EA81000B11302 /* MomentApp.swift */; };
 		7736EC0F264EA81100B11302 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBE5264EA81000B11302 /* ContentView.swift */; };
 		7736EC10264EA81100B11302 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBE5264EA81000B11302 /* ContentView.swift */; };
 		7736EC11264EA81100B11302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7736EBE6264EA81100B11302 /* Assets.xcassets */; };
 		7736EC12264EA81100B11302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7736EBE6264EA81100B11302 /* Assets.xcassets */; };
+		77E61B922653E08000A56C20 /* MomentAppIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B902653DF8B00A56C20 /* MomentAppIOS.swift */; };
+		77E61B932653E08300A56C20 /* MomentAppMacOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B912653DFA200A56C20 /* MomentAppMacOS.swift */; };
+		77E61B952653E10100A56C20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B942653E10100A56C20 /* ViewController.swift */; };
+		77E61B962653E10100A56C20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B942653E10100A56C20 /* ViewController.swift */; };
+		77E61B9B2653E18500A56C20 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B9A2653E18500A56C20 /* ViewModel.swift */; };
+		77E61B9C2653E18500A56C20 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B9A2653E18500A56C20 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7736EBE4264EA81000B11302 /* MomentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentApp.swift; sourceTree = "<group>"; };
+		56F54B03264EADA200BEEAD0 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		7736EBE5264EA81000B11302 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7736EBE6264EA81100B11302 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7736EBEB264EA81100B11302 /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +57,10 @@
 		7736EC0C264EA81100B11302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7736EC21264EA81E00B11302 /* Moment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Moment.entitlements; sourceTree = "<group>"; };
 		7736EC22264EA87400B11302 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		77E61B902653DF8B00A56C20 /* MomentAppIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentAppIOS.swift; sourceTree = "<group>"; };
+		77E61B912653DFA200A56C20 /* MomentAppMacOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentAppMacOS.swift; sourceTree = "<group>"; };
+		77E61B942653E10100A56C20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		77E61B9A2653E18500A56C20 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +95,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56F54B02264EAD4900BEEAD0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				56F54B03264EADA200BEEAD0 /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		7736EBDE264EA81000B11302 = {
 			isa = PBXGroup;
 			children = (
 				7736EC22264EA87400B11302 /* .swiftlint.yml */,
 				7736EC21264EA81E00B11302 /* Moment.entitlements */,
+				56F54B02264EAD4900BEEAD0 /* Fonts */,
 				7736EBE3264EA81000B11302 /* Shared */,
 				7736EBED264EA81100B11302 /* iOS */,
 				7736EBF4264EA81100B11302 /* macOS */,
@@ -102,8 +121,9 @@
 		7736EBE3264EA81000B11302 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				7736EBE4264EA81000B11302 /* MomentApp.swift */,
-				7736EBE5264EA81000B11302 /* ContentView.swift */,
+				77E61B8F2653DE3700A56C20 /* ViewController */,
+				77E61B8E2653DE2C00A56C20 /* View */,
+				77E61B8D2653DD9200A56C20 /* ViewModel */,
 				7736EBE6264EA81100B11302 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -124,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				7736EBEE264EA81100B11302 /* Info.plist */,
+				77E61B902653DF8B00A56C20 /* MomentAppIOS.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -133,6 +154,7 @@
 			children = (
 				7736EBF5264EA81100B11302 /* Info.plist */,
 				7736EBF6264EA81100B11302 /* macOS.entitlements */,
+				77E61B912653DFA200A56C20 /* MomentAppMacOS.swift */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -153,6 +175,30 @@
 				7736EC0C264EA81100B11302 /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		77E61B8D2653DD9200A56C20 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				77E61B9A2653E18500A56C20 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		77E61B8E2653DE2C00A56C20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7736EBE5264EA81000B11302 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77E61B8F2653DE3700A56C20 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				77E61B942653E10100A56C20 /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F54B04264EADA800BEEAD0 /* Montserrat-Regular.ttf in Resources */,
 				7736EC11264EA81100B11302 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F54B09264EADAA00BEEAD0 /* Montserrat-Regular.ttf in Resources */,
 				7736EC12264EA81100B11302 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,8 +399,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77E61B952653E10100A56C20 /* ViewController.swift in Sources */,
 				7736EC0F264EA81100B11302 /* ContentView.swift in Sources */,
-				7736EC0D264EA81100B11302 /* MomentApp.swift in Sources */,
+				77E61B9B2653E18500A56C20 /* ViewModel.swift in Sources */,
+				77E61B922653E08000A56C20 /* MomentAppIOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,8 +410,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77E61B962653E10100A56C20 /* ViewController.swift in Sources */,
 				7736EC10264EA81100B11302 /* ContentView.swift in Sources */,
-				7736EC0E264EA81100B11302 /* MomentApp.swift in Sources */,
+				77E61B9C2653E18500A56C20 /* ViewModel.swift in Sources */,
+				77E61B932653E08300A56C20 /* MomentAppMacOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,7 +567,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Moment.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VH525588L5;
+				DEVELOPMENT_TEAM = M7W2WQWYYB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -539,7 +591,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Moment.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VH525588L5;
+				DEVELOPMENT_TEAM = M7W2WQWYYB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -565,7 +617,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VH525588L5;
+				DEVELOPMENT_TEAM = M7W2WQWYYB;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -589,7 +641,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VH525588L5;
+				DEVELOPMENT_TEAM = M7W2WQWYYB;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -610,7 +662,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VH525588L5;
+				DEVELOPMENT_TEAM = 2KUGC5CZ6Z;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -632,7 +684,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VH525588L5;
+				DEVELOPMENT_TEAM = 2KUGC5CZ6Z;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -656,7 +708,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VH525588L5;
+				DEVELOPMENT_TEAM = 2KUGC5CZ6Z;
 				INFOPLIST_FILE = "Tests macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -678,7 +730,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VH525588L5;
+				DEVELOPMENT_TEAM = 2KUGC5CZ6Z;
 				INFOPLIST_FILE = "Tests macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
