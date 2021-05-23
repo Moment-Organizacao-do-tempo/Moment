@@ -44,9 +44,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Montserrat-Regular.otf</string>
-	</array>
 </dict>
 </plist>

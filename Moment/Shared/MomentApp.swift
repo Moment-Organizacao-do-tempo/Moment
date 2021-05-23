@@ -1,8 +1,8 @@
 //
-//  MomentAppIOS.swift
-//  Moment
+//  MomentApp.swift
+//  Shared
 //
-//  Created by Beatriz Carlos on 18/05/21.
+//  Created by Beatriz Carlos on 14/05/21.
 //
 
 import SwiftUI
