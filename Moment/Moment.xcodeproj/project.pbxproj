@@ -21,6 +21,8 @@
 		77E61B962653E10100A56C20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B942653E10100A56C20 /* ViewController.swift */; };
 		77E61B9B2653E18500A56C20 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B9A2653E18500A56C20 /* ViewModel.swift */; };
 		77E61B9C2653E18500A56C20 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B9A2653E18500A56C20 /* ViewModel.swift */; };
+		FFA1306E2657F431008AF94D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1306D2657F431008AF94D /* SettingsView.swift */; };
+		FFA1306F2657F431008AF94D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1306D2657F431008AF94D /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,7 @@
 		77E61B912653DFA200A56C20 /* MomentAppMacOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentAppMacOS.swift; sourceTree = "<group>"; };
 		77E61B942653E10100A56C20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		77E61B9A2653E18500A56C20 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		FFA1306D2657F431008AF94D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				7736EBE5264EA81000B11302 /* ContentView.swift */,
+				FFA1306D2657F431008AF94D /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA1306E2657F431008AF94D /* SettingsView.swift in Sources */,
 				77E61B952653E10100A56C20 /* ViewController.swift in Sources */,
 				7736EC0F264EA81100B11302 /* ContentView.swift in Sources */,
 				77E61B9B2653E18500A56C20 /* ViewModel.swift in Sources */,
@@ -410,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA1306F2657F431008AF94D /* SettingsView.swift in Sources */,
 				77E61B962653E10100A56C20 /* ViewController.swift in Sources */,
 				7736EC10264EA81100B11302 /* ContentView.swift in Sources */,
 				77E61B9C2653E18500A56C20 /* ViewModel.swift in Sources */,
