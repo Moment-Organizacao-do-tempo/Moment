@@ -15,25 +15,40 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            
             VStack {
-                topButtons
+//                topButtons
                 textTimer
                 circle
             }
+
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            .navigationBarHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
             .background(Color("BackgroundColor").ignoresSafeArea())
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    
-                    viewModel.startTimer()
-                    
-                    withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
-                        self.phase = .pi * 2
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        print("Config button tapped!")
+                    }) {
+                        Image("reloadButton").renderingMode(.template).foregroundColor(Color("TextColor"))
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: SettingsView()) {
+                        Image("configButton")
+                            .renderingMode(.template).foregroundColor(Color("TextColor"))
                     }
                 }
             }
+//            .onAppear {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//
+//                    viewModel.startTimer()
+//
+//                    withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
+//                        self.phase = .pi * 2
+//                    }
+//                }
+//            }
         }
         
     }
@@ -52,7 +67,6 @@ struct ContentView: View {
                 Image("configButton")
                     .renderingMode(.template).foregroundColor(Color("TextColor"))
             }
-            .navigationTitle("Moment")
             .padding()
         }
     }

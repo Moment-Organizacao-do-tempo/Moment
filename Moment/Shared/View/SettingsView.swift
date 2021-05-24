@@ -41,13 +41,11 @@ struct SettingsView: View {
     }
     
     var body: some View {
-        
-        NavigationView {
-                form
-                    .background(Color("BackgroundColor").ignoresSafeArea())
-                    .foregroundColor(Color.black)
-                    .navigationBarTitle("Configurações")
-        }
+        form
+            .background(Color("BackgroundColor").ignoresSafeArea())
+            .foregroundColor(Color.black)
+            .navigationBarTitle("Configurações")
+            .navigationBarHidden(false)
     }
     
     fileprivate var form: some View {
@@ -118,6 +116,7 @@ struct SettingsView: View {
                 })
             }
         }
+        .border(Color.red)
     }
 }
 
