@@ -48,10 +48,11 @@ struct ContentView: View {
             
             Spacer().frame(width: 250)
                         
-            NavigationLink(destination: Text("Hello World" )) {
+            NavigationLink(destination: SettingsView()) {
                 Image("configButton")
                     .renderingMode(.template).foregroundColor(Color("TextColor"))
             }
+            .navigationTitle("Moment")
             .padding()
         }
     }
