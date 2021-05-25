@@ -15,6 +15,12 @@
 		7736EC10264EA81100B11302 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBE5264EA81000B11302 /* ContentView.swift */; };
 		7736EC11264EA81100B11302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7736EBE6264EA81100B11302 /* Assets.xcassets */; };
 		7736EC12264EA81100B11302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7736EBE6264EA81100B11302 /* Assets.xcassets */; };
+		77540110265D2828009287FD /* WaterWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7754010F265D2828009287FD /* WaterWave.swift */; };
+		77540111265D2828009287FD /* WaterWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7754010F265D2828009287FD /* WaterWave.swift */; };
+		77540113265D2A7D009287FD /* ContentViewIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77540112265D2A7D009287FD /* ContentViewIOS.swift */; };
+		77540115265D2C90009287FD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1306D2657F431008AF94D /* SettingsView.swift */; };
+		77540118265D2D30009287FD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77540117265D2D30009287FD /* Settings.swift */; };
+		77540119265D2D30009287FD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77540117265D2D30009287FD /* Settings.swift */; };
 		77E61B922653E08000A56C20 /* MomentAppIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B902653DF8B00A56C20 /* MomentAppIOS.swift */; };
 		77E61B932653E08300A56C20 /* MomentAppMacOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B912653DFA200A56C20 /* MomentAppMacOS.swift */; };
 		77E61B952653E10100A56C20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B942653E10100A56C20 /* ViewController.swift */; };
@@ -23,8 +29,6 @@
 		77E61B9C2653E18500A56C20 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B9A2653E18500A56C20 /* ViewModel.swift */; };
 		77EC3E06265BD4EB00799303 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EC3E05265BD4EB00799303 /* TimerViewModel.swift */; };
 		77EC3E07265BD4EB00799303 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EC3E05265BD4EB00799303 /* TimerViewModel.swift */; };
-		FFA1306E2657F431008AF94D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1306D2657F431008AF94D /* SettingsView.swift */; };
-		FFA1306F2657F431008AF94D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA1306D2657F431008AF94D /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,9 @@
 		7736EC0C264EA81100B11302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7736EC21264EA81E00B11302 /* Moment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Moment.entitlements; sourceTree = "<group>"; };
 		7736EC22264EA87400B11302 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		7754010F265D2828009287FD /* WaterWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWave.swift; sourceTree = "<group>"; };
+		77540112265D2A7D009287FD /* ContentViewIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewIOS.swift; sourceTree = "<group>"; };
+		77540117265D2D30009287FD /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		77E61B902653DF8B00A56C20 /* MomentAppIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentAppIOS.swift; sourceTree = "<group>"; };
 		77E61B912653DFA200A56C20 /* MomentAppMacOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentAppMacOS.swift; sourceTree = "<group>"; };
 		77E61B942653E10100A56C20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,8 +156,11 @@
 		7736EBED264EA81100B11302 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				77540116265D2D15009287FD /* Structs */,
 				7736EBEE264EA81100B11302 /* Info.plist */,
 				77E61B902653DF8B00A56C20 /* MomentAppIOS.swift */,
+				77540112265D2A7D009287FD /* ContentViewIOS.swift */,
+				FFA1306D2657F431008AF94D /* SettingsView.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -183,6 +193,14 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		77540116265D2D15009287FD /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				77540117265D2D30009287FD /* Settings.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
 		77E61B8D2653DD9200A56C20 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,7 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				7736EBE5264EA81000B11302 /* ContentView.swift */,
-				FFA1306D2657F431008AF94D /* SettingsView.swift */,
+				7754010F265D2828009287FD /* WaterWave.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -407,10 +425,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77540113265D2A7D009287FD /* ContentViewIOS.swift in Sources */,
+				77540115265D2C90009287FD /* SettingsView.swift in Sources */,
 				77EC3E06265BD4EB00799303 /* TimerViewModel.swift in Sources */,
-				FFA1306E2657F431008AF94D /* SettingsView.swift in Sources */,
+				77540110265D2828009287FD /* WaterWave.swift in Sources */,
 				77E61B952653E10100A56C20 /* ViewController.swift in Sources */,
 				7736EC0F264EA81100B11302 /* ContentView.swift in Sources */,
+				77540118265D2D30009287FD /* Settings.swift in Sources */,
 				77E61B9B2653E18500A56C20 /* ViewModel.swift in Sources */,
 				77E61B922653E08000A56C20 /* MomentAppIOS.swift in Sources */,
 			);
@@ -421,9 +442,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				77EC3E07265BD4EB00799303 /* TimerViewModel.swift in Sources */,
-				FFA1306F2657F431008AF94D /* SettingsView.swift in Sources */,
+				77540111265D2828009287FD /* WaterWave.swift in Sources */,
 				77E61B962653E10100A56C20 /* ViewController.swift in Sources */,
 				7736EC10264EA81100B11302 /* ContentView.swift in Sources */,
+				77540119265D2D30009287FD /* Settings.swift in Sources */,
 				77E61B9C2653E18500A56C20 /* ViewModel.swift in Sources */,
 				77E61B932653E08300A56C20 /* MomentAppMacOS.swift in Sources */,
 			);

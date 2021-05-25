@@ -7,31 +7,22 @@
 
 import SwiftUI
 
-struct Settings {
-    static let focusTimeIndex = "focusTimeIndex"
-    static let shortPauseIndex = "shortPauseIndex"
-    static let longPauseIndex = "longPauseIndex"
-    static let cyclesIndex = "cyclesIndex"
-    static let notificationsEnabled = "notificationsEnabled"
-}
-
 struct SettingsView: View {
     
     @AppStorage(Settings.notificationsEnabled) private var notificationsEnabled = false
-    
     @AppStorage(Settings.focusTimeIndex) private var focusTimeIndex = 2
     @AppStorage(Settings.shortPauseIndex) private var shortPauseIndex = 0
     @AppStorage(Settings.longPauseIndex) private var longPauseIndex = 0
     @AppStorage(Settings.cyclesIndex) private var cyclesIndex = 2
     
+    init() {
+        UITableView.appearance().backgroundColor = .clear
+    }
+    
     var previewOptions = [900, 1200, 1500, 1800, 2100, 2400]
     var shortPauseOptions = [300, 600, 900, 1200]
     var longPauseOptions = [1200, 1500, 1800, 2100, 2400]
     var cyclesOptions = ["1", "2", "3", "4", "5"]
-    
-    init() {
-        UITableView.appearance().backgroundColor = .clear
-    }
     
     // method formats time to string.
     private func formatTime(_ time: Int) -> String {
@@ -119,7 +110,6 @@ struct SettingsView: View {
         .border(Color.red)
     }
 }
-
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {

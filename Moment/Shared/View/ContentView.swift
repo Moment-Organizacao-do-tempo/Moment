@@ -14,60 +14,22 @@ struct ContentView: View {
     @StateObject var viewModel = TimerViewModel()
     
     var body: some View {
-        NavigationView {
-            VStack {
-//                topButtons
-                textTimer
-                circle
+        VStack {
+            textTimer
+            circle
+            Button("Play") {
+                print("Testes")
             }
-
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            .navigationBarTitleDisplayMode(.inline)
-            .background(Color("BackgroundColor").ignoresSafeArea())
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        print("Config button tapped!")
-                    }) {
-                        Image("reloadButton").renderingMode(.template).foregroundColor(Color("TextColor"))
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: SettingsView()) {
-                        Image("configButton")
-                            .renderingMode(.template).foregroundColor(Color("TextColor"))
-                    }
-                }
-            }
-//            .onAppear {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//
-//                    viewModel.startTimer()
-//
-//                    withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
-//                        self.phase = .pi * 2
-//                    }
-//                }
-//            }
         }
-        
-    }
-    
-    private var topButtons: some View {
-        HStack {
-            Button(action: {
-                print("Config button tapped!")
-            }) {
-                Image("reloadButton").renderingMode(.template).foregroundColor(Color("TextColor"))
-            }.padding()
-            
-            Spacer().frame(width: 250)
-                        
-            NavigationLink(destination: SettingsView()) {
-                Image("configButton")
-                    .renderingMode(.template).foregroundColor(Color("TextColor"))
+        .padding(.top, 20)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color("BackgroundColor").ignoresSafeArea())
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
+                    self.phase = .pi * 2
+                }
             }
-            .padding()
         }
     }
     
@@ -85,7 +47,7 @@ struct ContentView: View {
         }
     }
     
-    private var circle: some View {
+    public var circle: some View {
         ZStack {
             Circle()
                 .fill(
@@ -108,47 +70,6 @@ struct ContentView: View {
             Image("Texture").opacity(0.45)
         }
         .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
-    }
-}
-
-struct WaterWave: Shape {
-    
-    let progress: CGFloat
-    let applitude: CGFloat = 10
-    var waveLength: CGFloat = 20
-    var phase: CGFloat
-    
-    var animatableData: CGFloat {
-        get { phase }
-        set { phase = newValue }
-    }
-    
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        
-        let width = rect.width
-        let height = rect.height
-        
-        let minWidth = width/2
-        let progressHeight = height * (1 - progress)
-        
-        path.move(to: CGPoint(x: 0, y: progressHeight))
-        
-        for xPoint in stride(from: CGFloat(0), to: (CGFloat(width) + CGFloat(5)), by: CGFloat(5)) {
-            
-            let relativeX = xPoint/waveLength
-            let normalizedLength = (xPoint-minWidth)/minWidth
-            let yPoint = progressHeight + sin(phase + relativeX)*applitude*normalizedLength
-            
-            path.addLine(to: CGPoint(x: xPoint, y: yPoint))
-        }
-        
-        path.addLine(to: CGPoint(x: width, y: progressHeight))
-        path.addLine(to: CGPoint(x: width, y: height))
-        path.addLine(to: CGPoint(x: 0, y: height))
-        path.addLine(to: CGPoint(x: 0, y: progressHeight))
-        
-        return path
     }
 }
 
