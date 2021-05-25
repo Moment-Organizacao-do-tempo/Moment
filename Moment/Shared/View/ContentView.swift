@@ -8,20 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var progress: CGFloat = 0.5
+//    @State var progress: CGFloat = 0.5
     @State var phase: CGFloat = 0.0
+    @State var isPlaying: Bool = false
     
     @StateObject var viewModel = TimerViewModel()
     
     var body: some View {
         VStack {
+            Spacer()
+            
             textTimer
             circle
-            Button("Play") {
-                print("Testes")
+            
+            Spacer()
+            
+            Button(action: {
+                self.isPlaying.toggle()
+                if isPlaying {
+                    viewModel.startTimer()
+                } else {
+                    _ = viewModel.stopTimer()
+                }
+            }) {
+                Image(self.isPlaying ? "pauseButton" : "playButton")
+                    .renderingMode(.template)
+                    .foregroundColor(Color("ActionColor"))
             }
+            .buttonStyle(PlainButtonStyle())
+            .padding(.top, 20)
+            
+            Spacer()
         }
-        .padding(.top, 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(Color("BackgroundColor").ignoresSafeArea())
         .onAppear {
@@ -38,12 +56,12 @@ struct ContentView: View {
             Text("Nome do pomodoro")
                 .foregroundColor(Color("TextColor"))
                 .multilineTextAlignment(.center)
-                .font(.custom("Montserrat-Regular", size: 28))
+                .font(.custom("Montserrat-Regular", size: 24))
             
             Text(viewModel.timeString)
                 .foregroundColor(Color("TextColor"))
                 .multilineTextAlignment(.center)
-                .font(.custom("Montserrat-Regular", size: 68))
+                .font(.custom("Montserrat-Regular", size: 36))
         }
     }
     
@@ -54,7 +72,7 @@ struct ContentView: View {
                     RadialGradient(gradient: Gradient(colors: [Color.init("ColorGradientInitial"), Color.init("ColorGradientFinal")]), center: .center, startRadius: 0, endRadius: 250)
                 ).frame(width: 238, height: 238)
             
-            WaterWave(progress: self.progress, phase: self.phase)
+            WaterWave(progress: viewModel.progressWaver, phase: self.phase)
                 .fill(Color.init("FillWaterWave"))
                 .clipShape(Capsule())
                 .frame(width: 228, height: 228)
