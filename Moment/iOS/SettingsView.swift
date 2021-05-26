@@ -44,8 +44,6 @@ struct SettingsView: View {
 //            .onChange(of: focusTimeIndex) {
 //                UserDefaults.standard.set(self.focusOptions[$0], forKey: Settings.pomodoro)
 //            }
-            
-        
     }
     
     fileprivate var form: some View {
