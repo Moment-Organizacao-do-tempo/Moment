@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnboardingView: View {
     @State var phase: CGFloat = 0.0
+    @State var getStart = false
     var body: some View {
         ZStack {
             RadialGradient(
@@ -60,7 +61,7 @@ struct OnboardingView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Button(action: {}) {
+                    Button(action: { goHome() }) {
                         Text("Comece já!")
                             .bold()
                             .font(Font.custom("Montserrat-Regular", size: 18.0))
@@ -74,6 +75,13 @@ struct OnboardingView: View {
                 Spacer()
             }).frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: .infinity, alignment: .leading).padding(20)
             .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+        }
+    }
+    
+    func goHome() {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UIHostingController(rootView: ContentViewIOS())
+            window.makeKeyAndVisible()
         }
     }
 }
