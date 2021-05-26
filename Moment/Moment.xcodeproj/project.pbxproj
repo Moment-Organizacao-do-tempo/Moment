@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		567805AC265D1F0D00D4DCF9 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567805AB265D1F0D00D4DCF9 /* OnboardingView.swift */; };
+		567805B3265D201D00D4DCF9 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 567805B1265D201D00D4DCF9 /* Montserrat-SemiBold.ttf */; };
+		567805B4265D201D00D4DCF9 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 567805B1265D201D00D4DCF9 /* Montserrat-SemiBold.ttf */; };
+		567805B5265D201D00D4DCF9 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 567805B2265D201D00D4DCF9 /* Montserrat-Bold.ttf */; };
+		567805B6265D201D00D4DCF9 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 567805B2265D201D00D4DCF9 /* Montserrat-Bold.ttf */; };
 		56F54B04264EADA800BEEAD0 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56F54B03264EADA200BEEAD0 /* Montserrat-Regular.ttf */; };
 		56F54B09264EADAA00BEEAD0 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56F54B03264EADA200BEEAD0 /* Montserrat-Regular.ttf */; };
 		7736EC00264EA81100B11302 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBFF264EA81100B11302 /* Tests_iOS.swift */; };
@@ -49,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		567805AB265D1F0D00D4DCF9 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		567805B1265D201D00D4DCF9 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		567805B2265D201D00D4DCF9 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		56F54B03264EADA200BEEAD0 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		7736EBE5264EA81000B11302 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7736EBE6264EA81100B11302 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +119,8 @@
 		56F54B02264EAD4900BEEAD0 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				567805B2265D201D00D4DCF9 /* Montserrat-Bold.ttf */,
+				567805B1265D201D00D4DCF9 /* Montserrat-SemiBold.ttf */,
 				56F54B03264EADA200BEEAD0 /* Montserrat-Regular.ttf */,
 			);
 			path = Fonts;
@@ -159,6 +169,7 @@
 				77540116265D2D15009287FD /* Structs */,
 				7736EBEE264EA81100B11302 /* Info.plist */,
 				77E61B902653DF8B00A56C20 /* MomentAppIOS.swift */,
+				567805AB265D1F0D00D4DCF9 /* OnboardingView.swift */,
 				77540112265D2A7D009287FD /* ContentViewIOS.swift */,
 				FFA1306D2657F431008AF94D /* SettingsView.swift */,
 			);
@@ -353,6 +364,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				567805B5265D201D00D4DCF9 /* Montserrat-Bold.ttf in Resources */,
+				567805B3265D201D00D4DCF9 /* Montserrat-SemiBold.ttf in Resources */,
 				56F54B04264EADA800BEEAD0 /* Montserrat-Regular.ttf in Resources */,
 				7736EC11264EA81100B11302 /* Assets.xcassets in Resources */,
 			);
@@ -362,6 +375,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				567805B6265D201D00D4DCF9 /* Montserrat-Bold.ttf in Resources */,
+				567805B4265D201D00D4DCF9 /* Montserrat-SemiBold.ttf in Resources */,
 				56F54B09264EADAA00BEEAD0 /* Montserrat-Regular.ttf in Resources */,
 				7736EC12264EA81100B11302 /* Assets.xcassets in Resources */,
 			);
@@ -434,6 +449,7 @@
 				77540118265D2D30009287FD /* Settings.swift in Sources */,
 				77E61B9B2653E18500A56C20 /* ViewModel.swift in Sources */,
 				77E61B922653E08000A56C20 /* MomentAppIOS.swift in Sources */,
+				567805AC265D1F0D00D4DCF9 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
