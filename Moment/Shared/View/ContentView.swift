@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @State var progress: CGFloat = 0.5
     @State var phase: CGFloat = 0.0
     @State var isPlaying: Bool = false
     
@@ -53,7 +52,7 @@ struct ContentView: View {
     
     private var textTimer: some View {
         VStack(spacing: 30) {
-            Text("Nome do pomodoro")
+            Text(viewModel.pomodoroName)
                 .foregroundColor(Color("TextColor"))
                 .multilineTextAlignment(.center)
                 .font(.custom("Montserrat-Regular", size: 24))

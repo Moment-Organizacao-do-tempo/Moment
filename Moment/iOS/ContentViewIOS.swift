@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentViewIOS: View {
     @State var displaySettings = false
     var body: some View {
+
         NavigationView {
             VStack {
                 NavigationLink(destination: SettingsView(), isActive: $displaySettings) {
