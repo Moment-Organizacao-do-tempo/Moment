@@ -40,6 +40,15 @@ class TimerViewModel: ObservableObject {
         return UserDefaults.standard.integer(forKey: "longPause")
     }
     
+    func restart() -> Bool {
+        timer.invalidate()
+        time = getPomodoroTimer()
+        pomodoroName = "Pomodoro"
+        timeString = "00:00"
+        startTimer()
+        return true
+    }
+    
     func startTimer() {
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
     }
@@ -71,6 +80,9 @@ class TimerViewModel: ObservableObject {
     
     func stopTimer() -> Bool {
         timer.invalidate()
+        time = getPomodoroTimer()
+        pomodoroName = "Pomodoro"
+        timeString = "00:00"
         return true
     }
     

@@ -30,8 +30,6 @@
 		77E61B932653E08300A56C20 /* MomentAppMacOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B912653DFA200A56C20 /* MomentAppMacOS.swift */; };
 		77E61B952653E10100A56C20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B942653E10100A56C20 /* ViewController.swift */; };
 		77E61B962653E10100A56C20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B942653E10100A56C20 /* ViewController.swift */; };
-		77E61B9B2653E18500A56C20 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B9A2653E18500A56C20 /* ViewModel.swift */; };
-		77E61B9C2653E18500A56C20 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E61B9A2653E18500A56C20 /* ViewModel.swift */; };
 		77EC3E06265BD4EB00799303 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EC3E05265BD4EB00799303 /* TimerViewModel.swift */; };
 		77EC3E07265BD4EB00799303 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EC3E05265BD4EB00799303 /* TimerViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -79,7 +77,6 @@
 		77E61B902653DF8B00A56C20 /* MomentAppIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentAppIOS.swift; sourceTree = "<group>"; };
 		77E61B912653DFA200A56C20 /* MomentAppMacOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentAppMacOS.swift; sourceTree = "<group>"; };
 		77E61B942653E10100A56C20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		77E61B9A2653E18500A56C20 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		77EC3E05265BD4EB00799303 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		FFA1306D2657F431008AF94D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,7 +212,6 @@
 		77E61B8D2653DD9200A56C20 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				77E61B9A2653E18500A56C20 /* ViewModel.swift */,
 				77EC3E05265BD4EB00799303 /* TimerViewModel.swift */,
 			);
 			path = ViewModel;
@@ -447,7 +443,6 @@
 				77E61B952653E10100A56C20 /* ViewController.swift in Sources */,
 				7736EC0F264EA81100B11302 /* ContentView.swift in Sources */,
 				77540118265D2D30009287FD /* Settings.swift in Sources */,
-				77E61B9B2653E18500A56C20 /* ViewModel.swift in Sources */,
 				77E61B922653E08000A56C20 /* MomentAppIOS.swift in Sources */,
 				567805AC265D1F0D00D4DCF9 /* OnboardingView.swift in Sources */,
 			);
@@ -462,7 +457,6 @@
 				77E61B962653E10100A56C20 /* ViewController.swift in Sources */,
 				7736EC10264EA81100B11302 /* ContentView.swift in Sources */,
 				77540119265D2D30009287FD /* Settings.swift in Sources */,
-				77E61B9C2653E18500A56C20 /* ViewModel.swift in Sources */,
 				77E61B932653E08300A56C20 /* MomentAppMacOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,7 +635,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Moment.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M7W2WQWYYB;
+				DEVELOPMENT_TEAM = VH525588L5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

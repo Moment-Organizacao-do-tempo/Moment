@@ -16,6 +16,12 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Spacer()
+
+            Button(action: {
+                print("Button tapped!")
+            }) {
+                Image("reloadButton").renderingMode(.template).foregroundColor(Color("TextColor"))
+            }.buttonStyle(PlainButtonStyle())
             
             textTimer
             circle

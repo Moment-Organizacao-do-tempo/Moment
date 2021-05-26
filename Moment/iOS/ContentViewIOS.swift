@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContentViewIOS: View {
     @State var displaySettings = false
-    var body: some View {
+    @StateObject var viewModel = TimerViewModel()
 
+    var body: some View {
+        
         NavigationView {
             VStack {
                 NavigationLink(destination: SettingsView(), isActive: $displaySettings) {
@@ -21,7 +23,7 @@ struct ContentViewIOS: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
-                        print("Config button tapped!")
+                        print("chegou")
                     }) {
                         Image("reloadButton").renderingMode(.template).foregroundColor(Color("TextColor"))
                     }
