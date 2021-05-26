@@ -12,7 +12,8 @@ class TimerViewModel: ObservableObject {
     
     var timer = Timer()
     var isTimerStarted = false
-    lazy var time = self.getPomodoroTimer() // seconds
+    
+    @AppStorage(Settings.pomodoro) var time: Int = 20
     
     @Published var timeString: String = "00:00"
     @Published var pomodoroName: String = "Nome do pomodoro"

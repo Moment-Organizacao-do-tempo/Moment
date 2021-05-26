@@ -17,5 +17,5 @@ public struct Settings {
     static let pomodoro = "pomodoro"
     static let breakPause = "breakPause"
     static let longPause = "longPause"
-    static let cycle = "cycle"
+    static let cycles = "cycles"
 }
