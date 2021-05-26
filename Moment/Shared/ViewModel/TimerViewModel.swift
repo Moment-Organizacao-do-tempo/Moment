@@ -12,32 +12,30 @@ class TimerViewModel: ObservableObject {
     
     var timer = Timer()
     var isTimerStarted = false
-    lazy var time = self.getPomodoroTimer() // seconds
+    
+    @AppStorage(Settings.pomodoro) var time: Int = 20
     
     @Published var timeString: String = "00:00"
     @Published var pomodoroName: String = "Nome do pomodoro"
     @Published var progressWaver: CGFloat = 1.0
     
     init() {
-        UserDefaults.standard.set(10, forKey: "pomodoro")
-        UserDefaults.standard.set(5, forKey: "breakPause")
-        UserDefaults.standard.set(600, forKey: "longPause")
         self.timeString = formatTime(time: time)
     }
     
     // get pomodoro timer
     public func getPomodoroTimer() -> Int {
-        return UserDefaults.standard.integer(forKey: "pomodoro")
+        return UserDefaults.standard.integer(forKey: Settings.pomodoro)
     }
     
     // get pause break
     public func getShortBreakTimer() -> Int {
-        return UserDefaults.standard.integer(forKey: "breakPause")
+        return UserDefaults.standard.integer(forKey: Settings.breakPause)
     }
     
     // get long break
     public func getLongBreakTimer() -> Int {
-        return UserDefaults.standard.integer(forKey: "longPause")
+        return UserDefaults.standard.integer(forKey: Settings.longPause)
     }
     
     func startTimer() {
