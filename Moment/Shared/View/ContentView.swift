@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             
-            Text("\(viewModel.time)"  )
+//            Text("\(viewModel.time)"  )
             
             Spacer()
             

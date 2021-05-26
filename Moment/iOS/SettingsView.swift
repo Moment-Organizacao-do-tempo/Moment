@@ -36,63 +36,61 @@ struct SettingsView: View {
         form
             .background(Color("BackgroundColor").ignoresSafeArea())
             .font(Font.custom("Montserrat-Regular", size: 15))
-            .foregroundColor(Color("ActionColor"))
-            
-            .foregroundColor(Color.black)
+            .foregroundColor(Color("TextColor"))
+        
             .navigationBarTitle("Configurações")
             .navigationBarHidden(false)
+
 //            .onChange(of: focusTimeIndex) {
 //                UserDefaults.standard.set(self.focusOptions[$0], forKey: Settings.pomodoro)
 //            }
+            
+        
     }
     
     fileprivate var form: some View {
         Form {
-            
+
             Section(header: Text("Timer").font(Font.custom("Montserrat-Regular", size: 12))) {
 //                HStack {
 //                    Picker(selection: $focusTimeIndex, label: Text("Objetivo")) {
 //                    }
-//                    .foregroundColor(Color("ActionColor"))
 //                }
-                
+
                 HStack {
-                    Picker(selection: $focusTime, label: Text("Tempo de foco").font(Font.custom("Montserrat-Regular", size: 15))) {
+                    Picker(selection: $focusTime, label: Text("Tempo de foco")) {
                         ForEach(focusOptions, id: \.self) {
                             Text(formatTime($0))
                         }
                     }
-//                    .foregroundColor(Color("ActionColor"))
                 }
                 
                 HStack {
-                    Picker(selection: $breakPause, label: Text("Pausa curta").font(Font.custom("Montserrat-Regular", size: 15))) {
+                    Picker(selection: $breakPause, label: Text("Pausa curta")) {
                         ForEach(shortPauseOptions, id: \.self) {
                             Text(formatTime($0))
                         }
                     }
-//                    .foregroundColor(Color("ActionColor"))
                 }
                 
-                HStack {
-                    Picker(selection: $longPause, label: Text("Pausa longa").font(Font.custom("Montserrat-Regular", size: 15))) {
-                        ForEach(longPauseOptions, id: \.self) {
-                            Text(formatTime($0))
-                        }
-                    }
-//                    .foregroundColor(Color("ActionColor"))
-                }
+//                HStack {
+//                    Picker(selection: $longPause, label: Text("Pausa longa")) {
+//                        ForEach(longPauseOptions, id: \.self) {
+//                            Text(formatTime($0))
+//                        }
+//                    }
+//                }
                 
-                HStack {
-                    Picker(selection: $cycles, label: Text("Ciclos").font(Font.custom("Montserrat-Regular", size: 15))) {
-                        ForEach(0..<cyclesOptions.count) {
-                            Text(self.cyclesOptions[$0])
-                        }
-                    }
-//                    .foregroundColor(Color("ActionColor"))
-                }
+//                HStack() {
+//                    Picker(selection: $cycles, label: Text("Ciclos")) {
+//                        ForEach(0..<cyclesOptions.count) {
+//                            Text(self.cyclesOptions[$0])
+//                        }
+//                    }
+//                }
             }
-            
+            .listRowBackground(Color("SectionColor"))
+                    
 //            Section(header: Text("Notifications").font(Font.custom("Montserrat-Regular", size: 12))) {
 ////                HStack {
 ////                    Picker(selection: $focusTimeIndex, label: Text("Sobre nós").font(Font.custom("Montserrat-Regular", size: 15))) {
