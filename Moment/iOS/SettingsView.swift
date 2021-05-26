@@ -15,14 +15,17 @@ struct SettingsView: View {
     @AppStorage(Settings.longPauseIndex) private var longPauseIndex = 0
     @AppStorage(Settings.cyclesIndex) private var cyclesIndex = 2
     
-    init() {
-        UITableView.appearance().backgroundColor = .clear
-    }
-    
-    var previewOptions = [900, 1200, 1500, 1800, 2100, 2400]
+    var focusOptions = [900, 1200, 1500, 1800, 2100, 2400]
     var shortPauseOptions = [300, 600, 900, 1200]
     var longPauseOptions = [1200, 1500, 1800, 2100, 2400]
     var cyclesOptions = ["1", "2", "3", "4", "5"]
+    
+    init() {
+        UserDefaults.standard.set(self.focusOptions[focusTimeIndex], forKey: Settings.pomodoro)
+        UserDefaults.standard.set(self.shortPauseOptions[shortPauseIndex], forKey: Settings.breakPause)
+        UserDefaults.standard.set(self.longPauseOptions[longPauseIndex], forKey: Settings.longPause)
+        UITableView.appearance().backgroundColor = .clear
+    }
     
     // method formats time to string.
     private func formatTime(_ time: Int) -> String {
@@ -51,9 +54,10 @@ struct SettingsView: View {
                 
                 HStack {
                     Picker(selection: $focusTimeIndex, label: Text("Tempo de foco").font(Font.custom("Montserrat-Regular", size: 15))) {
-                        ForEach(0..<previewOptions.count) {
-                            Text(formatTime(self.previewOptions[$0])).font(Font.custom("Montserrat-Regular", size: 15))
+                        ForEach(0..<focusOptions.count) {
+                            Text(formatTime(self.focusOptions[$0])).font(Font.custom("Montserrat-Regular", size: 15))
                         }
+                        
                     }
                     .foregroundColor(Color("ActionColor"))
                 }
@@ -107,7 +111,6 @@ struct SettingsView: View {
                 })
             }
         }
-        .border(Color.red)
     }
 }
 

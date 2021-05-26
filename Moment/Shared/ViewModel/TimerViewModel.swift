@@ -19,25 +19,22 @@ class TimerViewModel: ObservableObject {
     @Published var progressWaver: CGFloat = 1.0
     
     init() {
-        UserDefaults.standard.set(10, forKey: "pomodoro")
-        UserDefaults.standard.set(5, forKey: "breakPause")
-        UserDefaults.standard.set(600, forKey: "longPause")
         self.timeString = formatTime(time: time)
     }
     
     // get pomodoro timer
     public func getPomodoroTimer() -> Int {
-        return UserDefaults.standard.integer(forKey: "pomodoro")
+        return UserDefaults.standard.integer(forKey: Settings.pomodoro)
     }
     
     // get pause break
     public func getShortBreakTimer() -> Int {
-        return UserDefaults.standard.integer(forKey: "breakPause")
+        return UserDefaults.standard.integer(forKey: Settings.breakPause)
     }
     
     // get long break
     public func getLongBreakTimer() -> Int {
-        return UserDefaults.standard.integer(forKey: "longPause")
+        return UserDefaults.standard.integer(forKey: Settings.longPause)
     }
     
     func startTimer() {
