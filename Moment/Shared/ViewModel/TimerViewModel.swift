@@ -15,7 +15,7 @@ class TimerViewModel: ObservableObject {
     lazy var time = self.getPomodoroTimer() // seconds
     
     @Published var timeString: String = "00:00"
-    @Published var pomodoroName: String = "Nome do pomodoro"
+    @Published var pomodoroName: String = "Pomodoro"
     @Published var progressWaver: CGFloat = 1.0
     
     init() {
@@ -56,6 +56,7 @@ class TimerViewModel: ObservableObject {
                 changeBreakPause()
                 flagBreak += 1
             } else {
+                pomodoroName = "Parabéns, acabou!"
                 _ = stopTimer()
             }
         }
@@ -69,7 +70,6 @@ class TimerViewModel: ObservableObject {
     }
     
     func stopTimer() -> Bool {
-        pomodoroName = "Parabéns, acabou!"
         timer.invalidate()
         return true
     }
