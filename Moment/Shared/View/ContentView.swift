@@ -48,7 +48,7 @@ struct ContentView: View {
             
             Spacer().frame(width: 250)
                         
-            NavigationLink(destination: AboutView()) {
+            NavigationLink(destination: SettingsView()) {
                 Image("configButton")
                     .renderingMode(.template).foregroundColor(Color("TextColor"))
             }
