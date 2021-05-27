@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct MomentApp: App {
+    @StateObject var viewModel = TimerViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView().frame(width: 440, height: 600, alignment: .center)
+            ContentView(viewModel: viewModel).frame(width: 440, height: 600, alignment: .center)
         }
     }
 }

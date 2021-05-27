@@ -10,66 +10,59 @@ import AVFoundation
 
 class TimerViewModel: ObservableObject {
     
+    @Published var timerMode: TimerMode = .initial
+
     var timer = Timer()
     var isTimerStarted = false
     
-    @AppStorage(Settings.pomodoro) var time: Int = 20
-    
+    @AppStorage(Settings.pomodoro) var totalTime: Int = 1500
+    @AppStorage(Settings.breakPause) var breakPause: Int = 0
+    @AppStorage(Settings.longPause) var longPause: Int = 0
+    @AppStorage(Settings.cycles) var cycles: Int = 0
+
     @Published var timeString: String = "00:00"
-    @Published var pomodoroName: String = "Nome do pomodoro"
+    @Published var pomodoroName: String = "Pomodoro"
     @Published var progressWaver: CGFloat = 1.0
     
+    var runningTime: Int
+    
     init() {
-        self.timeString = formatTime(time: time)
+        self.runningTime = UserDefaults.standard.integer(forKey: Settings.pomodoro)
+        self.timeString = formatTime(time: runningTime)
+        self.timerMode = .initial
     }
     
-    // get pomodoro timer
-    public func getPomodoroTimer() -> Int {
-        return UserDefaults.standard.integer(forKey: Settings.pomodoro)
+    func updateRunningTime() {
+        self.runningTime = UserDefaults.standard.integer(forKey: Settings.pomodoro)
+        self.timeString = formatTime(time: runningTime)
     }
     
-    // get pause break
-    public func getShortBreakTimer() -> Int {
-        return UserDefaults.standard.integer(forKey: Settings.breakPause)
-    }
-    
-    // get long break
-    public func getLongBreakTimer() -> Int {
-        return UserDefaults.standard.integer(forKey: Settings.longPause)
-    }
-    
-    func startTimer() {
+    func start() {
+        timerMode = .running
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
     }
     
     var flagBreak = 0
     @objc func updateTimer() {
-        if time != 0 {
-            time -= 1
-            timeString = formatTime(time: time)
-            progressWaver = changeProgressWaver(timeType: getPomodoroTimer())
-        } else {
-            flagBreak += 1
-            if flagBreak == 1 {
-                changeBreakPause()
-                flagBreak += 1
-            } else {
-                _ = stopTimer()
-            }
+        if runningTime == 0 {
+            restartTimer()
         }
+        
+        runningTime -= 1
+        timeString = formatTime(time: runningTime)
+        progressWaver = changeProgressWaver(timeType: totalTime)
     }
     
-    func changeBreakPause() {
-        time = getShortBreakTimer()
-        pomodoroName = "Hora da pausa!"
-        progressWaver = changeProgressWaver(timeType: getShortBreakTimer())
-        self.timeString = formatTime(time: time)
-    }
-    
-    func stopTimer() -> Bool {
-        pomodoroName = "Parabéns, acabou!"
+    func restartTimer() {
         timer.invalidate()
-        return true
+        timerMode = .initial
+        runningTime = self.totalTime
+        timeString = formatTime(time: runningTime)
+    }
+    
+    func pause() {
+        self.timerMode = .paused
+        timer.invalidate()
     }
     
     // method formats time to string.
@@ -80,6 +73,6 @@ class TimerViewModel: ObservableObject {
     }
     
     public func changeProgressWaver(timeType: Int) -> CGFloat {
-        return CGFloat(time) / CGFloat(timeType)
+        return CGFloat(runningTime) / CGFloat(timeType)
     }
 }

@@ -41,9 +41,6 @@ struct SettingsView: View {
             .navigationBarTitle("Configurações")
             .navigationBarHidden(false)
 
-//            .onChange(of: focusTimeIndex) {
-//                UserDefaults.standard.set(self.focusOptions[$0], forKey: Settings.pomodoro)
-//            }
     }
     
     fileprivate var form: some View {
@@ -78,7 +75,7 @@ struct SettingsView: View {
 //                        }
 //                    }
 //                }
-                
+//
 //                HStack() {
 //                    Picker(selection: $cycles, label: Text("Ciclos")) {
 //                        ForEach(0..<cyclesOptions.count) {
@@ -99,8 +96,8 @@ struct SettingsView: View {
 //                    Text("Notificações").font(Font.custom("Montserrat-Regular", size: 15))
 //                }
 //                .foregroundColor(Color("ActionColor"))
-//            }
-            
+//            }.hidden()
+//            
 //            Section {
 //                Button(action: {
 //                    print("Button clicked")
@@ -108,7 +105,7 @@ struct SettingsView: View {
 //                    Text("Resetar todas as configurações").font(Font.custom("Montserrat-Regular", size: 15))
 //                        .foregroundColor(Color("ActionColor"))
 //                })
-//            }
+//            }.hidden()
         }
     }
 }
