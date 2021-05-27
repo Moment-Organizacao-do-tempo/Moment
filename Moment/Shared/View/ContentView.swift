@@ -11,40 +11,31 @@ struct ContentView: View {
     @State var phase: CGFloat = 0.0
     @State var isPlaying: Bool = false
     
-    @StateObject var viewModel = TimerViewModel()
+    @ObservedObject var viewModel: TimerViewModel
     
     var body: some View {
         VStack {
-            
-//            Text("\(viewModel.time)"  )
-            
             Spacer()
-
-            Button(action: {
-                print("Button tapped!")
-            }) {
-                Image("reloadButton").renderingMode(.template).foregroundColor(Color("TextColor"))
-            }.buttonStyle(PlainButtonStyle())
+            
+            #if os(macOS)
+                Button(action: {
+                    viewModel.restartTimer()
+                }) {
+                    Image("reloadButton").renderingMode(.template).foregroundColor(Color("TextColor"))
+                }.buttonStyle(PlainButtonStyle()).frame(alignment: .leading)
+            #endif
             
             textTimer
             circle
             
             Spacer()
             
-            Button(action: {
-                self.isPlaying.toggle()
-                if isPlaying {
-                    viewModel.startTimer()
-                } else {
-                    _ = viewModel.stopTimer()
-                }
-            }) {
-                Image(self.isPlaying ? "pauseButton" : "playButton")
-                    .renderingMode(.template)
-                    .foregroundColor(Color("ActionColor"))
-            }
-            .buttonStyle(PlainButtonStyle())
-            .padding(.top, 20)
+            Image(viewModel.timerMode == .running ? "pauseButton" : "playButton")
+                .renderingMode(.template)
+                .foregroundColor(Color("ActionColor"))
+                .onTapGesture(perform: {
+                    self.viewModel.timerMode == .running ? self.viewModel.pause() : self.viewModel.start()
+                })
             
             Spacer()
         }
@@ -56,6 +47,9 @@ struct ContentView: View {
                     self.phase = .pi * 2
                 }
             }
+        }
+        .onChange(of: viewModel.totalTime) { _ in
+            viewModel.updateRunningTime()
         }
     }
     
@@ -99,10 +93,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .preferredColorScheme(.dark)
-        
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView() .preferredColorScheme(.dark)
+//    }
+//}
